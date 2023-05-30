@@ -1,0 +1,39 @@
+#footer_top {
+   background-image: url("../images/footer-bg.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   h5 {
+      margin: 1rem 0;
+      font-weight: 700;
+   }
+
+   a {
+      color: #b0b0b0;
+      text-decoration: none;
+      font-size: small;
+      font-weight: lighter;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   .foot_logo {
+      width: 400px;
+      aspect-ratio: 1;
+      background-image: url("../images/dc-logo-bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+   }
+}
+
+#footer_bottom {
+   background-color: #303030;
+   padding: 1.5rem 0;
+
+   button:hover {
+      background-color: #0282f9;
+   }
+
+}

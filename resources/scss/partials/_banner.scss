@@ -1,0 +1,14 @@
+.banner {
+   height: 180px;
+}
+
+.banner_image {
+   height: 80px;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+
+   p {
+      margin: 0;
+   }
+}
