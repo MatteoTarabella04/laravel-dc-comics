@@ -17,7 +17,8 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control" id="price" name="price" required>
+                <input type="text" class="form-control" id="price" name="price" placeholder="Add $ before"
+                    required>
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
@@ -29,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">Type</label>
-                <input type="date" class="form-control" id="type" name="type" required>
+                <input type="text" class="form-control" id="type" name="type" required>
             </div>
             <div class="d-flex justify-content-center py-4">
                 <button class="btn w-50 btn-primary" type="submit">Create</button>
