@@ -41,9 +41,35 @@ class ComicController extends Controller
 
     }
 
-
     public function show(Comic $comic)
     {
         return view('admin.comics.show', compact('comic'));
+    }
+
+    public function edit(Comic $comic)
+    {
+        return view('admin.comics.edit', compact('comic'));
+    }
+
+    public function update(Request $request, Comic $comic)
+    {
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type
+        ];
+
+        $comic->update($data);
+
+        return to_route('comics.index')->with('message', 'comic updated successfully');
+    }
+
+    public function destroy(Comic $comic)
+    {
+        //
     }
 }
