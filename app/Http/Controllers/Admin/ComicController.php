@@ -24,17 +24,21 @@ class ComicController extends Controller
 
     public function store(Request $request)
     {
-        $comic = new Comic();
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->thumb = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-        $comic->sale_date = $request->sale_date;
-        $comic->type = $request->type;
-        $comic->save();
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type
+        ];
 
-        return to_route('comics.index');
+        Comic::create($data);
+
+
+        return to_route('comics.index')->with('message', 'comic added successfully');
+
     }
 
 
