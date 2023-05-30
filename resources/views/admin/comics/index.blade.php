@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="table-responsive">
-        <div class="container-fluid py-4">
+    @include('partials.nav')
+
+    <div class="container-fluid py-4">
+        <div class="table-responsive">
 
             @if (session('message'))
                 <div class="alert alert-primary" role="alert">
