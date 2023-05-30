@@ -2,7 +2,14 @@
 
 @section('content')
     <div class="table-responsive">
-        <div class="container py-4">
+        <div class="container-fluid py-4">
+
+            @if (session('message'))
+                <div class="alert alert-primary" role="alert">
+                    <strong>{{ session('message') }}</strong>
+                </div>
+            @endif
+
             <table
                 class="table table-striped
             table-hover
@@ -37,20 +44,28 @@
                             <td>{{ $comic->created_at }}</td>
                             <td>{{ $comic->updated_at }}</td>
                             <td>
+                                <div class="d-flex gap-2">
 
-                                <a href="{{ route('comics.show', $comic->id) }}" title="View"
-                                    class="text-decoration-none">
-                                    <i class="fas fa-eye fa-sm fa-fw"></i>
-                                </a>
-                                <a href="{{ route('comics.edit', $comic->id) }}" title="Edit"
-                                    class="text-decoration-none">
-                                    <i class="fas fa-pencil fa-sm fa-fw"></i>
-                                </a>
-                                <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+                                    <button class="btn btn-primary">
+                                        <a href="{{ route('comics.show', $comic->id) }}" title="View"
+                                            class="text-decoration-none text-white">
+                                            <i class="fas fa-eye fa-sm fa-fw"></i>
+                                        </a>
+                                    </button>
+                                    <button class="btn btn-secondary">
+                                        <a href="{{ route('comics.edit', $comic->id) }}" title="Edit"
+                                            class="text-decoration-none text-white">
+                                            <i class="fas fa-pencil fa-sm fa-fw"></i>
+                                        </a>
+                                    </button>
+                                    <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i
+                                                class="fas fa-trash fa-sm fa-fw"></i></button>
+                                    </form>
+
+                                </div>
                             </td>
                         </tr>
                     @endforeach
