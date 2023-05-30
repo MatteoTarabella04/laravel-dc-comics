@@ -3,6 +3,8 @@
     <div class="container pt-4">
         <h1 class="text-center py-2">Add new comic</h1>
         <form action="{{ route('comics.store') }}" method="post">
+            @csrf
+
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" nmae="title" required>
