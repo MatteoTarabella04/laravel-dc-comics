@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
     <div class="container pt-4">
         <h1 class="py-4 text-center">
