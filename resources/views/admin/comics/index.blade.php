@@ -46,10 +46,11 @@
                                     class="text-decoration-none">
                                     <i class="fas fa-pencil fa-sm fa-fw"></i>
                                 </a>
-                                <a href="" title="Delete" class="text-decoration-none">
-                                    <i class="fas fa-trash fa-sm fa-fw"></i>
-                                </a>
-
+                                <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
