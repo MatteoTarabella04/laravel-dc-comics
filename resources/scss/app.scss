@@ -1,1 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import './partials/header';
+@import './partials/jumbotron';
+@import './partials/cards';
+@import './partials/banner';
+@import './partials/footer';
+
+a {
+   text-decoration: none;
+}
+
+img {
+   max-width: 100%;
+}
+
+.card {
+   &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+   }
+}
