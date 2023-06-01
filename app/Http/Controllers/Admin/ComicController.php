@@ -27,22 +27,11 @@ class ComicController extends Controller
     public function store(StoreComicRequest $request)
     {
 
+        $valid_data = $request->validated();
 
+        Comic::create($valid_data);
 
-        /* $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'price' => $request->price,
-            'series' => $request->series,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type
-        ]; */
-
-        /* Comic::create($data); */
-
-
-        return to_route('comics.index')->with('message', 'comic added successfully');
+        return to_route('comics.index')->with('message', 'Comic added successfully');
 
     }
 
@@ -58,24 +47,16 @@ class ComicController extends Controller
 
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        /* $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'price' => $request->price,
-            'series' => $request->series,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type
-        ];
+        $valid_data = $request->validated();
 
-        $comic->update($data); */
+        Comic::create($valid_data);
 
-        return to_route('comics.index')->with('message', 'comic updated successfully');
+        return to_route('comics.index')->with('message', 'Comic updated successfully');
     }
 
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return to_route('comics.index')->with('message', 'comic deleted');
+        return to_route('comics.index')->with('message', 'Comic deleted');
     }
 }
