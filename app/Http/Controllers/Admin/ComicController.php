@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
@@ -22,9 +24,12 @@ class ComicController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $data = [
+
+
+
+        /* $data = [
             'title' => $request->title,
             'description' => $request->description,
             'thumb' => $request->thumb,
@@ -32,9 +37,9 @@ class ComicController extends Controller
             'series' => $request->series,
             'sale_date' => $request->sale_date,
             'type' => $request->type
-        ];
+        ]; */
 
-        Comic::create($data);
+        /* Comic::create($data); */
 
 
         return to_route('comics.index')->with('message', 'comic added successfully');
@@ -51,9 +56,9 @@ class ComicController extends Controller
         return view('admin.comics.edit', compact('comic'));
     }
 
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = [
+        /* $data = [
             'title' => $request->title,
             'description' => $request->description,
             'thumb' => $request->thumb,
@@ -63,7 +68,7 @@ class ComicController extends Controller
             'type' => $request->type
         ];
 
-        $comic->update($data);
+        $comic->update($data); */
 
         return to_route('comics.index')->with('message', 'comic updated successfully');
     }
